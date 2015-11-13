@@ -1,0 +1,52 @@
+<project name="cas overlay">
+
+	<property file="build.properties" />
+	
+	<path id="tomcat.libs"> 
+	  <fileset dir="/home/baia/Work/servers/apache-tomcat-8.0.28/lib/">
+	  	<include name="catalina-ant.jar"/>
+	  	<include name="tomcat-util.jar"/>
+	  </fileset>
+	</path> 
+	
+	<taskdef name="tomcat-start" classname="org.apache.catalina.ant.StartTask" classpathref="tomcat.libs" />
+	<taskdef name="tomcat-stop" classname="org.apache.catalina.ant.StopTask" classpathref="tomcat.libs" />
+	<taskdef name="tomcat-deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.libs" />
+	<taskdef name="tomcat-undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="tomcat.libs" />
+
+	<target name="generate">
+		<exec executable="${maven.path}" dir="${cas.overlay.path}">
+			<env key="JAVA_HOME" value="${jdk.home}" />
+			<arg line="clean" />
+			<arg line="package" />
+		</exec>
+	</target>
+
+	<target name="deploy">
+		
+	</target>
+
+	<target name="undeploy">
+		<tomcat-undeploy 
+					url="${tomcat.url}"
+					username="${tomcat.username}"
+					password="${tomcat.password}"
+					path="/cas" />
+	</target>
+
+	<target name="package">
+		<exec executable="${maven.path}">
+			<env key="JAVA_HOME" value="${jdk.home}" />
+			<arg line="clean" />
+			<arg line="package" />
+		</exec>
+	</target>
+
+	<target name="eclipse">
+		<exec executable="${maven.path}">
+			<env key="JAVA_HOME" value="${jdk.home}" />
+			<arg line="eclipse:eclipse" />
+		</exec>
+	</target>
+
+</project>
