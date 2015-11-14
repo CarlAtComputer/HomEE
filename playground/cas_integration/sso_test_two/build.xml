@@ -1,14 +1,14 @@
-<project name="cas overlay">
+<project name="sso test two">
 
 	<property file="build.properties" />
-	
-	<path id="tomcat.libs"> 
-	  <fileset dir="/home/baia/Work/servers/apache-tomcat-8.0.28/lib/">
-	  	<include name="catalina-ant.jar"/>
-	  	<include name="tomcat-util.jar"/>
-	  </fileset>
-	</path> 
-	
+
+	<path id="tomcat.libs">
+		<fileset dir="/home/baia/Work/servers/apache-tomcat-8.0.28/lib/">
+			<include name="catalina-ant.jar" />
+			<include name="tomcat-util.jar" />
+		</fileset>
+	</path>
+
 	<taskdef name="tomcat-start" classname="org.apache.catalina.ant.StartTask" classpathref="tomcat.libs" />
 	<taskdef name="tomcat-stop" classname="org.apache.catalina.ant.StopTask" classpathref="tomcat.libs" />
 	<taskdef name="tomcat-deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.libs" />
@@ -16,15 +16,15 @@
 
 	<target name="deploy" depends="package">
 		<get src="http://localhost:8080/manager/text/deploy?war=${basedir}/target/${app.name}.war&#38;path=/${app.name}" username="tomcat" password="tomcat" dest="deploy.log" />
-		<delete file="deploy.log"></delete>
+		<delete file="deploy.log" />
 	</target>
 
 	<target name="undeploy">
 		<get src="http://localhost:8080/manager/text/undeploy?path=/${app.name}" username="tomcat" password="tomcat" dest="deploy.log" />
-		<delete file="deploy.log"></delete>
+		<delete file="deploy.log" />
 	</target>
-	
-	<target name="redeploy" depends="undeploy, deploy"></target>
+
+	<target name="redeploy" depends="undeploy, deploy" />
 
 	<target name="package">
 		<exec executable="${maven.path}">

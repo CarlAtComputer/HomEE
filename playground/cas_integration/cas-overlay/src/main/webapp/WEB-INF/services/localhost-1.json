@@ -1,0 +1,7 @@
+{
+  "@class" : "org.jasig.cas.services.RegexRegisteredService",
+  "serviceId" : "^https://localhost:8443/*.*",
+  "name" : "localhost",
+  "id" : 1,
+  "evaluationOrder" : 0
+}

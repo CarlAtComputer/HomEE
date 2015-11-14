@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/javax/activation/activation/1.1/activation-1.1.jar" sourcepath="M2_REPO/javax/activation/activation/1.1/activation-1.1-sources.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+  <classpathentry kind="var" path="M2_REPO/org/jasig/cas/client/cas-client-core/3.4.1/cas-client-core-3.4.1.jar" sourcepath="M2_REPO/org/jasig/cas/client/cas-client-core/3.4.1/cas-client-core-3.4.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/baia/.m2/repository/org/jasig/cas/client/cas-client-core/3.4.1/cas-client-core-3.4.1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/baia/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/javax/javaee-api/7.0/javaee-api-7.0.jar" sourcepath="M2_REPO/javax/javaee-api/7.0/javaee-api-7.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/baia/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar" sourcepath="M2_REPO/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/baia/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+</classpath>
