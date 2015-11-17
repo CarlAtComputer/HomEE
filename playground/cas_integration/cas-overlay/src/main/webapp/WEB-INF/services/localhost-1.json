@@ -1,7 +1,9 @@
 {
   "@class" : "org.jasig.cas.services.RegexRegisteredService",
-  "serviceId" : "^https://localhost:8443/*.*",
+  "serviceId" : "^(https?|http?)://localhost:(8443?|8080?)/*.*",
   "name" : "localhost",
   "id" : 1,
-  "evaluationOrder" : 0
+  "attributeReleasePolicy" : {
+    "@class" : "org.jasig.cas.services.ReturnAllAttributeReleasePolicy"
+  }
 }

@@ -88,6 +88,7 @@
                    | If more than one instance of the same handler class is configured, you must explicitly
                    | set its name to something other than its default name (typically the simple class name).
                    -->
+                <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
                 <entry key-ref="dbAuthHandler" value-ref="primaryPrincipalResolver" />
             </map>
         </constructor-arg>
@@ -157,7 +158,7 @@
     +-->
 	<bean id="singleRowJdbcPersonAttributeDao" class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
 		<constructor-arg index="0" ref="dataSource" />
-		<constructor-arg index="1" value="select * from users WHERE {0}" />
+		<constructor-arg index="1" value="select username, user_role, password, active from users WHERE {0}" />
 		<property name="queryAttributeMapping">
 			<map>
 				<entry key="username" value="username" />
@@ -165,8 +166,10 @@
 		</property>
 		<property name="resultAttributeMapping">
 			<map>
-				<entry key="username" value="username" />
+				<entry key="username" value="nameOfUser" />
 				<entry key="password" value="credential" />
+				<entry key="user_role" value="role" />
+				<entry key="active" value="validation" />
 			</map>
 		</property>
 	</bean>

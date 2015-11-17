@@ -2,6 +2,7 @@ package pt.caughtonnet.sso.test.one.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.Principal;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +18,12 @@ public class TestServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter w = resp.getWriter();
+		
+		
+		Principal principal = req.getUserPrincipal();
+		
+		System.out.println(principal);
+		
 		w.write("<html>");
 		w.write("<body>");
 		w.write("<h1>It works sso test one</h1>");

@@ -1,4 +1,4 @@
-<project name="cas overlay">
+<project name="cas management overlay">
 
 	<property file="build.properties" />
 	
@@ -37,7 +37,6 @@
 	<target name="eclipse">
 		<exec executable="${maven.path}">
 			<env key="JAVA_HOME" value="${jdk.home}" />
-			<arg line="eclipse:clean" />
 			<arg line="eclipse:eclipse" />
 		</exec>
 	</target>

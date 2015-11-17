@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>pt.caughtonet</groupId>
-	<artifactId>cas4-overlay</artifactId>
+	<groupId>net.unicon</groupId>
+	<artifactId>cas4-management-overlay</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
 
@@ -13,11 +13,11 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
-					<warName>cas</warName>
+					<warName>manage</warName>
 					<overlays>
 						<overlay>
 							<groupId>org.jasig.cas</groupId>
-							<artifactId>cas-server-webapp</artifactId>
+							<artifactId>cas-management-webapp</artifactId>
 							<excludes>
 								<exclude>WEB-INF/classes</exclude>
 							</excludes>
@@ -36,62 +36,20 @@
 			</plugin>
 
 		</plugins>
-		<finalName>cas</finalName>
+		<finalName>manage</finalName>
 	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.jasig.cas</groupId>
-			<artifactId>cas-server-webapp</artifactId>
+			<artifactId>cas-management-webapp</artifactId>
 			<version>${cas.version}</version>
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.jasig.cas</groupId>
-			<artifactId>cas-server-support-jdbc</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jasig.cas</groupId>
-			<artifactId>cas-server-support-generic</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jasig.cas</groupId>
-			<artifactId>cas-server-support-saml</artifactId>
-			<version>${cas.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.bouncycastle</groupId>
-					<artifactId>bcprov-jdk15on</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.190</version>
-		</dependency>
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcprov-jdk15on</artifactId>
-				<version>1.51</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<properties>
-		<cas.version>4.1.0</cas.version>
+		<cas.version>4.1.1</cas.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

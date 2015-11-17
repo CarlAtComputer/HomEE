@@ -36,6 +36,11 @@
 			<version>${java.cas.client.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.jasig.cas.client</groupId>
+			<artifactId>cas-client-support-saml</artifactId>
+			<version>${java.cas.client.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
