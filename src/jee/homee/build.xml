@@ -1,0 +1,70 @@
+<project name="homee">
+	<property file="build.properties" />
+
+	<target name="compile">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="clean" />
+			<arg value="compile" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+	<target name="package">
+		<delete includeemptydirs="true" verbose="true">
+			<fileset dir="${basedir}" includes="**/target/**" />
+		</delete>
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="clean" />
+			<arg value="package" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+	<target name="install">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="clean" />
+			<arg value="install" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+	<target name="deploy">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="package" />
+			<arg value="wildfly:deploy-artifact" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+	<target name="undeploy">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="wildfly:undeploy" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+
+	<target name="test">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="test" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+	<target name="eclipse">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="clean" />
+			<arg value="package" />
+			<arg value="eclipse:eclipse" />
+			<arg value="-Dwtpversion=2.0" />
+			<env key="JAVA_HOME" value="${jdk.path}" />
+		</exec>
+	</target>
+
+
+</project>

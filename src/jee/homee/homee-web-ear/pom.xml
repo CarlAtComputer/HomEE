@@ -1,0 +1,53 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>pt.caughtonnet.homee</groupId>
+		<artifactId>homee</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<packaging>ear</packaging>
+	<artifactId>homee-web-ear</artifactId>
+	<name>HomEE Web EAR</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<version>5</version>
+					<modules>
+						<webModule>
+							<groupId>pt.caughtonnet.homee</groupId>
+							<artifactId>homee-web</artifactId>
+							<bundleFileName>homee-web.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.1.0.Alpha7</version>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>pt.caughtonnet.homee</groupId>
+			<artifactId>homee-web</artifactId>
+			<version>1.0.0</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>pt.caughtonnet.homee</groupId>
+			<artifactId>homee-domain</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

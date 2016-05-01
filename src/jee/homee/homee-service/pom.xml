@@ -1,0 +1,38 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>pt.caughtonnet.homee</groupId>
+		<artifactId>homee</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<packaging>ejb</packaging>
+	<artifactId>homee-service</artifactId>
+	<name>HomEE Services</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<ejbVersion>3.0</ejbVersion>
+					<generateClient>true</generateClient>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>pt.caughtonnet.homee</groupId>
+			<artifactId>homee-data</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>pt.caughtonnet.homee</groupId>
+			<artifactId>homee-domain</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

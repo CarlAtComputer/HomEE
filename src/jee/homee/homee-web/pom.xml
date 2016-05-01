@@ -1,0 +1,31 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>pt.caughtonnet.homee</groupId>
+		<artifactId>homee</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<packaging>war</packaging>
+	<artifactId>homee-web</artifactId>
+	<name>HomEE Web</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.richfaces</groupId>
+			<artifactId>richfaces</artifactId>
+			<version>4.5.15.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>pt.caughtonnet.homee</groupId>
+			<artifactId>homee-domain</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>pt.caughtonnet.homee</groupId>
+			<artifactId>homee-service</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+			<type>ejb-client</type>
+		</dependency>
+	</dependencies>
+</project>

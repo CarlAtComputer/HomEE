@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd" version="5">
+  <display-name>homee-service-ear</display-name>
+  <module>
+    <ejb>homee-service.jar</ejb>
+  </module>
+  <module>
+    <java>homee-domain.jar</java>
+  </module>
+  <module>
+    <java>homee-data.jar</java>
+  </module>
+</application>

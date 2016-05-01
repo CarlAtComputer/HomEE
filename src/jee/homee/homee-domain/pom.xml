@@ -1,0 +1,12 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>pt.caughtonnet.homee</groupId>
+		<artifactId>homee</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<packaging>jar</packaging>
+	<artifactId>homee-domain</artifactId>
+	<name>HomEE Domain</name>
+</project>

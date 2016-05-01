@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<ui:composition template="/templates/structure.xhtml">
+		<ui:define name="menu">
+			<li class="hidden active"><a href="#page-top"></a></li>
+			<li class=""><a class="page-scroll" href="#dashboard">Dashboard</a></li>
+			<li class=""><a class="page-scroll" href="#shopping">Shopping</a></li>
+			<li class=""><a class="page-scroll" href="#shores">Shores</a></li>
+			<li class=""><a class="page-scroll" href="#bills">Bills</a></li>
+			<li class=""><a class="page-scroll" href="#damages">Damages</a></li>
+			<li class=""><a class="page-scroll" href="#events">Events</a></li>
+			<li class=""><a class="page-scroll" href="#security">Security</a></li>
+			<li class=""><h:commandLink value="#{'logout'}" action="#{login.logout}" type="submit" styleClass="page-scroll"></h:commandLink></li>
+		</ui:define>
+
+		<ui:define name="content">
+			<section id="login">
+				<header>
+					<div class="container">
+						<div class="intro-text">
+							<div class="intro-lead-in">
+								Hello <strong>#{login.loggedUser.name}</strong>
+							</div>
+							<div class="intro-heading">Welcome to Nomade</div>
+						</div>
+					</div>
+				</header>
+			</section>
+			<section id="dashboard">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">Dashboard</h2>
+							<h3 class="section-subheading text-muted">The status of everything!</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="col-lg-12">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis massa, condimentum ut porta non, rutrum eleifend elit. Maecenas sodales gravida massa. Nam eget odio ut orci malesuada fringilla nec a libero. Vivamus vitae ante facilisis, malesuada tortor vitae, ultrices lacus. Donec id vulputate ante, eu laoreet nibh. Vestibulum non dolor magna. Vivamus at scelerisque ante, nec scelerisque turpis. Nulla commodo fringilla odio, id dictum risus.</p>
+								</div>
+								<div class="col-lg-12">
+									<p>Aliquam porttitor nunc sed est volutpat, euismod porta felis tristique. Quisque congue pellentesque aliquam. Morbi eleifend, lorem sit amet accumsan bibendum, libero erat accumsan enim, vel fringilla erat tortor a nulla. Nunc at urna felis. Suspendisse euismod, mauris at pretium scelerisque, turpis nunc placerat tortor, vel ultrices dolor sem interdum dolor. Donec lacus nibh, interdum vel sodales nec, congue eu justo. Fusce feugiat mi arcu, id placerat turpis ornare in. Donec laoreet velit maximus quam lobortis, eget vulputate ex euismod. Nullam malesuada metus sit amet diam pretium aliquet. Nunc varius volutpat lectus quis pulvinar. Ut efficitur feugiat nunc vel vehicula. Sed interdum dolor in massa vestibulum faucibus. Fusce ornare euismod malesuada. In id tincidunt justo.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="shopping">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">shopping</h2>
+							<h3 class="section-subheading text-muted">The status of everything!</h3>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="shores">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">shores</h2>
+							<h3 class="section-subheading text-muted">The status of everything!</h3>
+						</div>
+					</div>
+				</div>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</section>
+			<section id="bills">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">bills</h2>
+							<h3 class="section-subheading text-muted">The status of everything!</h3>
+						</div>
+					</div>
+				</div>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</section>
+			<section id="damages">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">damages</h2>
+							<h3 class="section-subheading text-muted">The status of everything!</h3>
+						</div>
+					</div>
+				</div>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</section>
+			<section id="events">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">events</h2>
+							<h3 class="section-subheading text-muted">The status of everything!</h3>
+						</div>
+					</div>
+				</div>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</section>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

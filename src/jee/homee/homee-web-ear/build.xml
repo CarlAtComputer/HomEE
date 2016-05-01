@@ -1,0 +1,31 @@
+<project name="homee-ear">
+	<property file="../build.properties" />
+
+	<target name="ear">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="clean" />
+			<arg value="ear:ear" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}"/>
+		</exec>
+	</target>
+	
+	<target name="deploy">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="wildfly:deploy" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}"/>
+		</exec>
+	</target>
+	
+	<target name="undeploy">
+		<exec executable="${maven.exe}" dir="${basedir}">
+			<arg value="wildfly:undeploy" />
+			<arg value="-DskipTests" />
+			<env key="JAVA_HOME" value="${jdk.path}"/>
+		</exec>
+	</target>
+
+
+
+</project>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<ui:composition template="/templates/structure.xhtml">
+
+		<ui:define name="menu">
+			<li class="hidden active"><a href="#page-top"></a></li>
+			<li class=""><a class="page-scroll" href="#login">Login</a></li>
+			<li class=""><a class="page-scroll" href="#about">About</a></li>
+			<li class=""><a class="page-scroll" href="#features">Features</a></li>
+			<li class=""><a class="page-scroll" href="#register">Register</a></li>
+		</ui:define>
+
+		<ui:define name="content">
+			<section id="login">
+				<header>
+					<div class="container">
+						<div class="intro-text">
+							<div class="intro-lead-in">Welcome</div>
+							<div class="intro-heading">It's Neat To Be at Home</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-3"></div>
+									<div class="col-lg-6">
+										<h:form name="login" id="loginForm" novalidate="">
+											<div class="row">
+												<div class="col-lg-12">
+													<div class="form-group">
+														<h:inputText type="email" id="email" value="#{login.email}" styleClass="form-control" a:placeholder="Email *" a:required="" a:data-validation-required-message="Please enter your email address." a:aria-invalid="false"></h:inputText>
+														<h:message for="email" styleClass="text-danger"></h:message>
+													</div>
+													<div class="form-group">
+														<h:inputText type="password" id="password" value="#{login.password}" styleClass="form-control" a:placeholder="Password" a:required="" a:data-validation-required-message="Please enter your password."></h:inputText>
+														<h:message for="password" styleClass="text-danger"></h:message>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+												<div class="col-lg-12 text-center">
+													<div id="success"></div>
+													<h:commandButton value="#{'login'}" action="#{login.login}" type="submit" styleClass="btn btn-xl"></h:commandButton>
+												</div>
+											</div>
+										</h:form>
+									</div>
+									<div class="col-lg-3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+			</section>
+			<section id="about">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">about</h2>
+							<h3 class="section-subheading text-muted">Home is where your hat is</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="col-lg-12">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis massa, condimentum ut porta non, rutrum eleifend elit. Maecenas sodales gravida massa. Nam eget odio ut orci malesuada fringilla nec a libero. Vivamus vitae ante facilisis, malesuada tortor vitae, ultrices lacus. Donec id vulputate ante, eu laoreet nibh. Vestibulum non dolor magna. Vivamus at scelerisque ante, nec scelerisque turpis. Nulla commodo fringilla odio, id dictum risus.</p>
+								</div>
+								<div class="col-lg-12">
+									<p>Aliquam porttitor nunc sed est volutpat, euismod porta felis tristique. Quisque congue pellentesque aliquam. Morbi eleifend, lorem sit amet accumsan bibendum, libero erat accumsan enim, vel fringilla erat tortor a nulla. Nunc at urna felis. Suspendisse euismod, mauris at pretium scelerisque, turpis nunc placerat tortor, vel ultrices dolor sem interdum dolor. Donec lacus nibh, interdum vel sodales nec, congue eu justo. Fusce feugiat mi arcu, id placerat turpis ornare in. Donec laoreet velit maximus quam lobortis, eget vulputate ex euismod. Nullam malesuada metus sit amet diam pretium aliquet. Nunc varius volutpat lectus quis pulvinar. Ut efficitur feugiat nunc vel vehicula. Sed interdum dolor in massa vestibulum faucibus. Fusce ornare euismod malesuada. In id tincidunt justo.</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<img class="img-circle img-responsive" src="https://iqsresponsive-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/Sugar-free-shopping-list-10-things-to-pack-in-your-pantry.jpg" alt="" style="height: 300px; width: 300px; display: block; margin-left: auto; margin-right: auto; padding: 20px;"></img>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<p>Sed tincidunt vulputate dui, vel consequat turpis cursus ut. Sed nec arcu elit. Etiam ultrices purus ut lacus gravida ultrices. Proin dignissim justo id ante tincidunt, sit amet iaculis nisi condimentum. Nulla at auctor quam. Pellentesque consectetur vel libero ac feugiat. Morbi in tempus dolor, sit amet consequat urna. Suspendisse sit amet orci sit amet dolor lacinia fringilla vel ac lectus. Fusce vulputate a sem sed auctor. Donec ullamcorper orci sed vestibulum lacinia. Sed et congue libero, non ornare lectus. Suspendisse eget posuere ante, suscipit viverra nunc. Integer eget lorem id arcu pellentesque porttitor. Duis maximus aliquet elit scelerisque pharetra.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="features">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">features</h2>
+							<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="service-heading">Shopping</h4>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-list-ul fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="service-heading">Shores</h4>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="service-heading">Bills</h4>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-bomb fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="service-heading">Damages</h4>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-birthday-cake fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="service-heading">Events</h4>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="service-heading">Security</h4>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="register">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2 class="section-heading">register</h2>
+							<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+						</div>
+					</div>
+					<div class="row">
+						<h:form name="register" id="registerForm" novalidate="">
+							<div class="row">
+								<div class="col-lg-3"></div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<h:inputText type="text" id="name" value="#{register.name}" styleClass="form-control" a:placeholder="Name *" a:required="" a:data-validation-required-message="Please enter your name." a:aria-invalid="false"></h:inputText>
+										<h:message for="name" styleClass="text-danger"></h:message>
+									</div>
+									<div class="form-group">
+										<h:inputText type="email" id="email" value="#{register.email}" styleClass="form-control" a:placeholder="Email *" a:required="" a:data-validation-required-message="Please enter your email address." a:aria-invalid="false"></h:inputText>
+										<h:message for="email" styleClass="text-danger"></h:message>
+									</div>
+									<div class="form-group">
+										<h:inputText type="password" id="password" value="#{register.password}" styleClass="form-control" a:placeholder="Password" a:required="" a:data-validation-required-message="Please enter your password."></h:inputText>
+										<h:message for="password" styleClass="text-danger"></h:message>
+									</div>
+								</div>
+								<div class="col-lg-12 text-center">
+									<div id="success"></div>
+									<h:commandButton value="#{'register'}" action="#{register.register}" type="submit" styleClass="btn btn-xl"></h:commandButton>
+								</div>
+								<div class="col-lg-3"></div>
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</section>
+			<section></section>
+			<section></section>
+			<section></section>
+		</ui:define>
+
+
+	</ui:composition>
+</h:body>
+</html>
