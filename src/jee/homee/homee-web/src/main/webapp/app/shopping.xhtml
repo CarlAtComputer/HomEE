@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<ui:composition template="/templates/structure.xhtml">
+		<ui:define name="menu">
+			<li class="hidden active"><a href="#page-top"></a></li>
+			<li class=""><a href="index.xhtml#shopping">Back</a></li>
+			<li class=""><a class="page-scroll" href="#shopping">Shopping</a></li>
+		</ui:define>
+
+		<ui:define name="content">
+			<section id="shopping">
+				<div class="container"></div>
+			</section>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

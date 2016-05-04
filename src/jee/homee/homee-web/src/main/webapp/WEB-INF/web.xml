@@ -61,5 +61,15 @@
 	<security-role>
 		<role-name>ADMIN</role-name>
 	</security-role>
+	
+	<filter>
+	    <filter-name>LoginPageFilter</filter-name>
+	    <filter-class>pt.caughtonnet.homee.filter.LoginPageFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>LoginPageFilter</filter-name>
+	    <url-pattern>/faces/front/*</url-pattern>
+	</filter-mapping>
     
 </web-app>

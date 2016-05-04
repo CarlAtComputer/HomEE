@@ -3,7 +3,7 @@
   <wb-module deploy-name="homee-web-ear">
     <wb-resource deploy-path="/" source-path="src/main/application"/>
     <dependent-module archiveName="homee-web.war" deploy-path="/" handle="module:/resource/homee-web/homee-web">
-      <dependent-object>WebModule_1641418296</dependent-object>
+      <dependent-object>WebModule_605649683</dependent-object>
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="homee-domain.jar" deploy-path="/" handle="module:/resource/homee-domain/homee-domain">

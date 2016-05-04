@@ -1,31 +1,34 @@
 package pt.caughtonnet.homee.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 /**
  * @author baia
  */
 @Entity
-@Table(name = "USERS", uniqueConstraints = { @UniqueConstraint(columnNames = { "email" }) })
+@Table(name = "USERS")
 public class User implements Serializable {
 	private static final long serialVersionUID = 4735115875121877121L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "USER_ID", unique = true, nullable = false)
 	private Long id;
 
 	@Column
 	private String name;
 
-	@Column(unique = true)
+	@Column
 	private String email;
 
 	@Column
@@ -36,6 +39,9 @@ public class User implements Serializable {
 
 	@Column
 	private String confirmationHash;
+	
+	@OneToMany(mappedBy="user")
+	private List<Home> homes;
 
 	/**
 	 * Gets the id
@@ -135,6 +141,40 @@ public class User implements Serializable {
 	 */
 	public void setConfirmationHash(String confirmationHash) {
 		this.confirmationHash = confirmationHash;
+	}
+	
+	/**
+	 * Gets the homes
+	 * @return the homes
+	 */
+	public List<Home> getHomes() {
+		return homes;
+	}
+	
+	/**
+	 * Sets the homes
+	 * @param homes the homes to set
+	 */
+	public void setHomes(List<Home> homes) {
+		this.homes = homes;
+	}
+	
+	public Home addHome(Home home) {
+		if (homes == null) {
+			homes = new ArrayList<Home>();
+		}
+		home.setUser(this);
+		homes.add(home);
+		return home;
+	}
+	
+	public Home removeHome(Home home) {
+		if (homes == null) {
+			homes = new ArrayList<Home>();
+		}
+		home.setUser(null);
+		homes.remove(home);
+		return home;
 	}
 
 }

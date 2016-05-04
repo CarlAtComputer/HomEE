@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <persistence>
-	<persistence-unit name="homee">
-        <jta-data-source>java:/jdbc/homee</jta-data-source>
+	<persistence-unit name="homee" transaction-type="JTA">
+		<jta-data-source>java:/jdbc/homee</jta-data-source>
+
+		<class>pt.caughtonnet.homee.entity.Home</class>
+		<class>pt.caughtonnet.homee.entity.UserRole</class>
+		<class>pt.caughtonnet.homee.entity.User</class>
+		<class>pt.caughtonnet.homee.entity.ShoppingList</class>
+
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
-			<!-- --> 
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 		</properties>
-		<class>pt.caughtonnet.homee.entity.User</class>
-		<class>pt.caughtonnet.homee.entity.UserRole</class>
 	</persistence-unit>
 </persistence>
