@@ -3,6 +3,8 @@
  */
 package pt.caughtonnet.homee.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +20,9 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name = "SHOPPING_LIST", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class ShoppingList {
+public class ShoppingList implements Serializable {
+	private static final long serialVersionUID = -4834255133140966316L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

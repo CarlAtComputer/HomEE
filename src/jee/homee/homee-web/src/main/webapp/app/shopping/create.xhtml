@@ -4,24 +4,25 @@
 	<ui:composition template="/templates/structure.xhtml">
 		<ui:define name="menu">
 			<li class="hidden active"><a href="#page-top"></a></li>
-			<li class=""><a href="index.xhtml#shopping">Back</a></li>
+			<li class=""><a href="../shopping.xhtml">Back</a></li>
 			<li class=""><a class="page-scroll" href="#shopping">Shopping</a></li>
 		</ui:define>
-
 		<ui:define name="content">
 			<section id="shopping">
 				<div class="container">
-					<h2>Your Shopping Lists</h2>
-					<a4j:outputPanel id="repeater">
-						<a4j:repeat value="#{shopping.shoppingLists}" var="shoppingList" rows="15" id="repeat">
-							<div class="col-sm-2">
-								<h:outputText value="#{shoppingList.name}" />
-							</div>
-						</a4j:repeat>
-					</a4j:outputPanel>
-					<div class="col-lg-12">
-						<h:link outcome="shopping/create" value="Create"></h:link>
-					</div>
+					<h2>Create Shopping List</h2>
+					<rich:graphValidator value="#{shopping}">
+						<h:form>
+							<rich:messages />
+							<h:outputText value="Name:" />
+							<h:inputText value="#{shopping.newShoppingList.name}" id="name" label="name">
+								<f:validateLength minimum="3" maximum="8" />
+								<f:validateRequired />
+								<rich:validator />
+							</h:inputText>
+							<h:commandButton value="Save" action="#{shopping.createNewShoppingList}" />
+						</h:form>
+					</rich:graphValidator>
 				</div>
 			</section>
 		</ui:define>
