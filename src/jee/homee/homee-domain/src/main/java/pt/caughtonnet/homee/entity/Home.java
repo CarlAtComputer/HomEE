@@ -3,6 +3,7 @@
  */
 package pt.caughtonnet.homee.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "HOMES")
-public class Home {
+public class Home implements Serializable {
+	private static final long serialVersionUID = -3259232339706502806L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

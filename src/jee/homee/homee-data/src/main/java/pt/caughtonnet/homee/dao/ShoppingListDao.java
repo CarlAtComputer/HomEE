@@ -5,12 +5,12 @@ import java.util.List;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import pt.caughtonnet.homee.entity.Home;
 import pt.caughtonnet.homee.entity.ShoppingList;
 
 @Local
@@ -21,13 +21,15 @@ public class ShoppingListDao {
 	@PersistenceContext(unitName = "homee")
 	private EntityManager em;
 
-	public List<ShoppingList> getLastShoppingLists() {
-		Query q = em.createQuery("select s from ShoppingList s order by s.id desc");
+	public List<ShoppingList> getLastShoppingLists(Home home) {
+		Query q = em.createQuery("select s from ShoppingList s where s.home = :home order by s.id desc");
+		q.setParameter("home", home);
 		return q.setMaxResults(5).getResultList();
 	}
 
-	public List<ShoppingList> getAllShoppingLists() {
-		Query q = em.createQuery("select s from ShoppingList s order by s.id desc");
+	public List<ShoppingList> getAllShoppingLists(Home home) {
+		Query q = em.createQuery("select s from ShoppingList s where s.home = :home order by s.id desc");
+		q.setParameter("home", home);
 		return q.getResultList();
 	}
 

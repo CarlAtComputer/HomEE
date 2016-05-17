@@ -4,6 +4,7 @@
 package pt.caughtonnet.homee.bean;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -12,6 +13,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
+import pt.caughtonnet.homee.entity.Home;
 import pt.caughtonnet.homee.entity.User;
 import pt.caughtonnet.homee.service.UserService;
 
@@ -81,6 +83,8 @@ public class RegisterBean {
 		userToRegister.setName(name);
 		userToRegister.setEmail(email);
 		userToRegister.setPassword(password);
+		userToRegister.setHomes(new ArrayList<Home>());
+		userToRegister.getHomes().add(createDefaultHome(userToRegister));
 		try {
 			userService.registerUser(userToRegister);
 		} catch (Exception e) {
@@ -96,6 +100,16 @@ public class RegisterBean {
 			}
 		}
 
+	}
+	
+	
+	
+
+	private Home createDefaultHome(User userToRegister) {
+		Home home = new Home();
+		home.setName(userToRegister.getName() + "'s home");
+		home.setUser(userToRegister);
+		return home;
 	}
 
 }

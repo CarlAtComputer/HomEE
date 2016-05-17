@@ -14,3 +14,17 @@ section {
 section h3.section-subheading {
 	margin-bottom: 50px;
 }
+
+.nav li.active-house a, .nav li.active-house a:hover, .nav li.active-house a:focus, .nav li.active-house a:active {
+	color: black;
+	border: 2px solid #fec503;
+	border-radius: 55px;
+	background-color: white;
+	margin: 0 0 0 40px;
+}
+
+@media ( max-width :768px) {
+	.nav li.active-house a, .nav li.active-house a:hover, .nav li.active-house a:focus, .nav li.active-house a:active {
+		margin: 40px;
+	}
+}

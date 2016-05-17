@@ -9,6 +9,7 @@ import javax.annotation.security.DeclareRoles;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -32,6 +33,9 @@ public class LoginBean {
 
 	@EJB(mappedName="java:global/homee-service-ear/homee-service/userService!pt.caughtonnet.homee.service.UserService")
 	private UserService userService;
+	
+	@ManagedProperty("#{home}")
+	private HomeBean homeBean;
 
 	/**
 	 * Gets the email
@@ -80,6 +84,14 @@ public class LoginBean {
 	public void setLoggedUser(User loggedUser) {
 		this.loggedUser = loggedUser;
 	}
+	
+	public void setHomeBean(HomeBean homeBean) {
+		this.homeBean = homeBean;
+	}
+	
+	public HomeBean getHomeBean() {
+		return homeBean;
+	}
 
 	public String login() {
 		ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
@@ -87,6 +99,7 @@ public class LoginBean {
 		try {
 			request.login(email, password);
 			loggedUser = userService.getUserByEmail(email);
+			homeBean.setActive(loggedUser.getDefaultHome());
 			return "/app/index";
 		} catch (ServletException e) {
 			try {
