@@ -84,7 +84,10 @@ public class RegisterBean {
 		userToRegister.setEmail(email);
 		userToRegister.setPassword(password);
 		userToRegister.setHomes(new ArrayList<Home>());
-		userToRegister.getHomes().add(createDefaultHome(userToRegister));
+		Home defaultHome = createDefaultHome(userToRegister);
+		userToRegister.getHomes().add(defaultHome);
+		userToRegister.setDefaultHome(defaultHome);
+		
 		try {
 			userService.registerUser(userToRegister);
 		} catch (Exception e) {

@@ -102,7 +102,7 @@
                 <level name="WARN"/>
             </logger>
             <logger category="org.jboss.security">
-                <level name="TRACE"/>
+                <level name="ERROR"/>
             </logger>
             <logger category="org.jboss.as.config">
                 <level name="DEBUG"/>

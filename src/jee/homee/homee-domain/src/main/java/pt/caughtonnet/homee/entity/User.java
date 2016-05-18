@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -44,6 +45,9 @@ public class User implements Serializable {
 	
 	@OneToMany(mappedBy="user", cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private List<Home> homes;
+	
+	@OneToOne
+	private Home defaultHome;
 
 	/**
 	 * Gets the id
@@ -178,12 +182,13 @@ public class User implements Serializable {
 		homes.remove(home);
 		return home;
 	}
-
+	
 	public Home getDefaultHome() {
-		if (homes != null && !homes.isEmpty()) {
-			return homes.get(0);
-		}
-		return null;
+		return defaultHome;
+	}
+	
+	public void setDefaultHome(Home defaultHome) {
+		this.defaultHome = defaultHome;
 	}
 
 }

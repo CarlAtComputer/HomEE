@@ -11,7 +11,56 @@
 		<ui:define name="content">
 			<section id="homes">
 				<div class="container">
-					<h2>Your Homes</h2>
+					<h:form>
+						<a4j:outputPanel id="homeManagementPanel">
+							<rich:togglePanel id="homeManagementTabs" activeItem="homes" render="homeManagementPanel">
+								<rich:togglePanelItem name="homes">
+									<h2>Your Homes</h2>
+									<div class="row">
+										<div class="col-md-12">
+											<a4j:repeat value="#{home.userHomes}" var="userHome" rows="15" id="repeat">
+												<div class="col-sm-2 vspacing-4">
+													<h:commandLink action="#{home.activateHome(userHome)}">
+														<h:panelGroup layout="block" styleClass="#{userHome.id == home.active.id ? 'home-item active-home-item' : 'home-item'}">
+													 		<h:outputLabel value="#{userHome.name}"/>
+														</h:panelGroup>
+													</h:commandLink>
+												</div>
+											</a4j:repeat>
+										</div>
+									</div>
+									<div class="row vspacing-12">
+										<div class="col-md-12">
+											<a4j:commandButton styleClass="btn btn-primary" value="Create Home">
+												<rich:toggleControl event="click" targetPanel="homeManagementTabs" targetItem="create" />
+											</a4j:commandButton>
+										</div>
+									</div>
+								</rich:togglePanelItem>
+								<rich:togglePanelItem name="create">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-12">
+													<p>After the second link click - panel changed active item to the second one according to name specified in the togglePanelBehavior</p>
+													<p>For now you are at Panel 2</p>
+												</div>
+											</div>
+											<div class="row vspacing-12">
+												<div class="col-md-6 pull-right">
+													<h:inputText value="#{home.create.name}"></h:inputText>
+													<a4j:commandButton styleClass="btn btn-primary" value="Create" action="#{home.createHome}" oncomplete="#{rich:component('homeManagementTabs')}.switchToItem('homes');"></a4j:commandButton>
+													<a4j:commandButton styleClass="btn btn-primary" value="Cancel">
+														<rich:toggleControl event="click" targetPanel="homeManagementTabs" targetItem="homes" />
+													</a4j:commandButton>
+												</div>
+											</div>
+										</div>
+									</div>
+								</rich:togglePanelItem>
+							</rich:togglePanel>
+						</a4j:outputPanel>
+					</h:form>
 				</div>
 			</section>
 		</ui:define>

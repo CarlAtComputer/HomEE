@@ -1,3 +1,25 @@
+/* - - - * - - - * - - - * - - -  */
+.vspacing-2 {
+	margin-top: 2px;
+}
+
+.vspacing-4 {
+	margin-top: 4px;
+}
+
+.vspacing-6 {
+	margin-top: 6px;
+}
+
+.vspacing-8 {
+	margin-top: 8px;
+}
+
+.vspacing-12 {
+	margin-top: 12px;
+}
+
+/* - - - * - - - * - - - * - - -  */
 section {
 	padding: 100px 0 50px 0;
 }
@@ -21,6 +43,33 @@ section h3.section-subheading {
 	border-radius: 55px;
 	background-color: white;
 	margin: 0 0 0 40px;
+}
+
+.home-item {
+	border: 1px solid #000;
+	border-radius: 55px;
+	padding: 5px;
+	text-align: center;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: black;
+}
+
+.home-item:hover {
+	color: #fff;
+	background-color: #fec503;
+	cursor: pointer;
+}
+
+.home-item.active-home-item {
+	border: 2px solid #fec503;
+	color: #fec503;
+}
+
+.home-item label {
+	margin-bottom: 7px;
+	margin-top: 7px;
 }
 
 @media ( max-width :768px) {
