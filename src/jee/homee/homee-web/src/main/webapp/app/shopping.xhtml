@@ -14,7 +14,9 @@
 					<a4j:outputPanel id="repeater">
 						<a4j:repeat value="#{shopping.shoppingLists}" var="shoppingList" rows="15" id="repeat">
 							<div class="col-sm-2">
-								<h:outputText value="#{shoppingList.name}" />
+								<h:link outcome="shopping/shopping-list" value="#{shoppingList.name}">
+									<f:param name="shopping-list-id" value="#{shoppingList.id}" />
+								</h:link>
 							</div>
 						</a4j:repeat>
 					</a4j:outputPanel>

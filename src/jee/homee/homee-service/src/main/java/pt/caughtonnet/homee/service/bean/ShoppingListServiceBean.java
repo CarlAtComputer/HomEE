@@ -36,4 +36,9 @@ public class ShoppingListServiceBean implements ShoppingListService {
 		return shoppingListDao.getShoppingListByName(name);
 	}
 
+	@Override
+	public ShoppingList getShoppingListById(Long shoppingListId) {
+		return shoppingListDao.getShoppingListById(shoppingListId);
+	}
+
 }

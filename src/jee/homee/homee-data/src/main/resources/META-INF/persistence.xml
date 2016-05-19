@@ -7,6 +7,7 @@
 		<class>pt.caughtonnet.homee.entity.UserRole</class>
 		<class>pt.caughtonnet.homee.entity.User</class>
 		<class>pt.caughtonnet.homee.entity.ShoppingList</class>
+		<class>pt.caughtonnet.homee.entity.ShoppingItem</class>
 
 		<properties>
 			<property name="hibernate.show_sql" value="true" />

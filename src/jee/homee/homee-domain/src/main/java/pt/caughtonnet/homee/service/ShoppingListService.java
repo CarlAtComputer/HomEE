@@ -13,4 +13,5 @@ public interface ShoppingListService {
 	public List<ShoppingList> getLastShoppingLists(Home home);
 	public void createNewShoppingList(ShoppingList shoppingList);
 	public ShoppingList getShoppingListByName(String name);
+	public ShoppingList getShoppingListById(Long shoppingListId);
 }

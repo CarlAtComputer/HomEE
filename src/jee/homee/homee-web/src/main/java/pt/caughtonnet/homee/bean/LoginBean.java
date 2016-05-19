@@ -27,8 +27,8 @@ import pt.caughtonnet.homee.service.UserService;
 @ManagedBean(name = "login")
 @DeclareRoles("ADMIN")
 public class LoginBean {
-	private String email;
-	private String password;
+	private String email = "test";
+	private String password = "test";
 	private User loggedUser;
 
 	@EJB(mappedName="java:global/homee-service-ear/homee-service/userService!pt.caughtonnet.homee.service.UserService")

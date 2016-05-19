@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
+<h:body>
+
+	<f:metadata>
+		<f:viewParam id="id" name="shopping-list-id" value="#{shoppingItem.shoppingListId}" />
+	</f:metadata>
+	
+	<ui:composition template="/templates/app/shopping.xhtml">
+
+		<ui:define name="back-link">
+			<h:link outcome="/app/shopping" value="Back" />
+		</ui:define>
+
+		<ui:define name="content">
+			<section id="shopping">
+				<div class="container">
+					<rich:graphValidator value="#{shoppingItem}">
+						<h:form>
+							<rich:messages />
+							<h:outputText value="Name:" />
+							<h:inputText value="#{shoppingItem.create.name}" id="name" label="name">
+								<f:validateLength minimum="3" maximum="8" />
+								<f:validateRequired />
+								<rich:validator />
+							</h:inputText>
+							<h:commandButton value="Save" action="#{shoppingItem.createShoppingItem}" />
+						</h:form>
+					</rich:graphValidator>
+				</div>
+			</section>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

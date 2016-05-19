@@ -46,5 +46,15 @@ public class ShoppingListDao {
 			return null;
 		}
 	}
+
+	public ShoppingList getShoppingListById(Long shoppingListId) {
+		try {
+			TypedQuery<ShoppingList> q = em.createQuery("select s from ShoppingList s left join FETCH s.shoppingItems i where s.id = :id", ShoppingList.class);
+			q.setParameter("id", shoppingListId);
+			return q.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
 	
 }

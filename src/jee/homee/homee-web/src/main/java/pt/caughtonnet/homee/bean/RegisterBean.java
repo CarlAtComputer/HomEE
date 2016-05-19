@@ -20,9 +20,9 @@ import pt.caughtonnet.homee.service.UserService;
 @SessionScoped
 @ManagedBean(name="register")
 public class RegisterBean {
-	private String name;
-	private String email;
-	private String password;
+	private String name = "test";
+	private String email = "test";
+	private String password = "test";
 
 	@EJB(mappedName="java:global/homee-service-ear/homee-service/userService!pt.caughtonnet.homee.service.UserService")
 	private UserService userService;
