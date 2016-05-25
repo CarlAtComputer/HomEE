@@ -17,6 +17,7 @@
 				<version>2.10.1</version>
 				<configuration>
 					<version>5</version>
+					<earName>homee-web-ear</earName>
 					<modules>
 						<webModule>
 							<groupId>pt.caughtonnet.homee</groupId>

@@ -17,6 +17,7 @@
 				<version>2.10.1</version>
 				<configuration>
 					<version>5</version>
+					<earName>homee-service-ear</earName>
 					<modules>
 						<ejbModule>
 							<groupId>pt.caughtonnet.homee</groupId>
