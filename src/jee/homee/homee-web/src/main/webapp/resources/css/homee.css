@@ -72,6 +72,12 @@ section h3.section-subheading {
 	margin-top: 7px;
 }
 
+.alert-popup {
+	position: absolute;
+	right: 0px;
+	top: 80px;
+}
+
 @media ( max-width :768px) {
 	.nav li.active-house a, .nav li.active-house a:hover, .nav li.active-house a:focus, .nav li.active-house a:active {
 		margin: 40px;

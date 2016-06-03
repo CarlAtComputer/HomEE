@@ -15,7 +15,9 @@ import javax.faces.context.FacesContext;
 
 import pt.caughtonnet.homee.entity.Home;
 import pt.caughtonnet.homee.entity.User;
+import pt.caughtonnet.homee.service.EmailService;
 import pt.caughtonnet.homee.service.UserService;
+import pt.caughtonnet.homee.service.exception.UserAlreadyExistsException;
 
 @SessionScoped
 @ManagedBean(name="register")
@@ -26,6 +28,9 @@ public class RegisterBean {
 
 	@EJB(mappedName="java:global/homee-service-ear/homee-service/userService!pt.caughtonnet.homee.service.UserService")
 	private UserService userService;
+	
+	@EJB
+	private EmailService emailService;
 
 	/**
 	 * Gets the name
@@ -79,6 +84,7 @@ public class RegisterBean {
 	 * Register action
 	 */
 	public void register() {
+		String msg;
 		User userToRegister = new User();
 		userToRegister.setName(name);
 		userToRegister.setEmail(email);
@@ -87,20 +93,41 @@ public class RegisterBean {
 		Home defaultHome = createDefaultHome(userToRegister);
 		userToRegister.getHomes().add(defaultHome);
 		userToRegister.setDefaultHome(defaultHome);
-		
+
+		ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+		System.out.println(ec.getRequestServerName());
+		System.out.println(ec.getRequestServerPort());
+
 		try {
-			userService.registerUser(userToRegister);
-		} catch (Exception e) {
-			try {
-				e.printStackTrace();
-				String msg = "Email already registered";
-				FacesContext.getCurrentInstance().addMessage("registerForm:email", new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
-				ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
-				ec.getFlash().setKeepMessages(true);
-				ec.redirect("index.xhtml#register");
-			} catch (IOException ex) {
-				ex.printStackTrace();
+			String path = "";
+			path += ec.getRequestServerName();
+			if (ec.getRequestServerPort() != 80) {
+				path += ":" + ec.getRequestServerPort();
 			}
+			path += ec.getRequestContextPath();
+			emailService.sendConfirmationEmail(userToRegister, "http", path);//ec.getRequestServerName() + ec.getRequestContextPath());
+			userService.registerUser(userToRegister);
+			msg = "A message was sent to your email in order for you to confirm you registration";
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));
+			ec.getFlash().setKeepMessages(true);
+			ec.redirect("registered.xhtml");
+			return;
+		} catch (UserAlreadyExistsException e) {
+			e.printStackTrace();
+			msg = "Email already registered";
+			FacesContext.getCurrentInstance().addMessage("registerForm:email", new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
+			ec.getFlash().setKeepMessages(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			msg = "An internal error occurred, please try later";
+			FacesContext.getCurrentInstance().addMessage("registerForm:name", new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
+			ec.getFlash().setKeepMessages(true);
+		}
+
+		try {
+			ec.redirect("index.xhtml#register");
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
 
 	}
