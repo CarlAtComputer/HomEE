@@ -1,4 +1,37 @@
 /* - - - * - - - * - - - * - - -  */
+
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(Montserrat-Regular.ttf?ln=fonts) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(Montserrat-Bold.ttf?ln=fonts) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(RobotoSlab-Regular.ttf?ln=fonts) format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(KaushanScript-Regular.ttf?ln=fonts) format('truetype');
+}
+
+
+
+/* - - - * - - - * - - - * - - -  */
+
+
 .vspacing-2 {
 	margin-top: 2px;
 }
