@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<ui:composition template="/templates/structure.xhtml">
+
+		<ui:define name="menu">
+			<li class="hidden active"><a href="#page-top"></a></li>
+			<li class=""><h:link outcome="index" value="Login"></h:link></li>
+		</ui:define>
+
+		<ui:define name="content">
+			<section id="login">
+				<header>
+					<div class="container">
+						<div class="intro-text">
+							<div class="intro-heading">
+								the home where<br />your hat is
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-3"></div>
+									<div class="col-lg-6">
+										BUMBAS
+									</div>
+									<div class="col-lg-3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+			</section>
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+</html>

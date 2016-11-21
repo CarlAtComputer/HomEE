@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .metadata
 bin/
 tmp/
@@ -48,3 +49,7 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+=======
+openshift
+openshift/.git
+>>>>>>> refs/remotes/origin/master

@@ -48,6 +48,8 @@
 			<groupId>pt.caughtonnet.homee</groupId>
 			<artifactId>homee-domain</artifactId>
 			<version>1.0.0</version>
+			<type>jar</type>
 		</dependency>
 	</dependencies>
+
 </project>
